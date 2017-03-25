@@ -44,7 +44,7 @@
     description += ' [' + coffeeOrder.strength + 'x]';
 
     $label.append($checkbox);
-    $label.append($description);
+    $label.append(description);
     $div.append($label);
 
     this.$element = $div;
