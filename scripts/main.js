@@ -6,6 +6,7 @@
   var Truck = App.Truck;
   var DataStore = App.DataStore;
   var FormHandler = App.FormHandler;
+  var Validation = App.Validation;
   var CheckList = App.CheckList;
 
   var myTruck = new Truck('ncc-1701', new DataStore());
@@ -18,13 +19,7 @@
     myTruck.createOrder.call(myTruck, data);
     checkList.addRow.call(checkList, data);
   });
-  console.log(formHandler);
 
-  // myTruck.createOrder({ emailAddress: 'dr@no.com', coffee: 'decaf'});
-  // myTruck.createOrder({ emailAddress: 'james@bond.com', coffee: 'espresso'});
-  // myTruck.createOrder({ emailAddress: 'q@bond.com', coffee: 'tea'});
-  // myTruck.printOrders();
-  // myTruck.deliverOrder('dr@no.com');
-  // myTruck.printOrders();
-
+  formHandler.addInputHandler(Validation.isCompanyEmail);
+  
 })(window);
